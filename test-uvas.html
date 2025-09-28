@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Uvas Estandarizadas</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <style>
+        .test-section { 
+            background: #f8f9fa; 
+            border: 1px solid #dee2e6; 
+            padding: 1rem; 
+            margin: 1rem 0; 
+            border-radius: 0.5rem; 
+        }
+        .grape-comparison {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🍇 Test de Uvas Estandarizadas</h1>
+        
+        <div class="test-section">
+            <h2>Propiedades Verificadas</h2>
+            <div id="properties-check"></div>
+        </div>
+
+        <div class="test-section">
+            <h2>Uvas Blancas</h2>
+            <div class="grape-comparison" id="white-grapes"></div>
+        </div>
+
+        <div class="test-section">
+            <h2>Uvas Tintas</h2>
+            <div class="grape-comparison" id="red-grapes"></div>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/components.js"></script>
+    <script>
+        function checkProperties() {
+            const status = document.getElementById('properties-check');
+            let results = '<h3>Verificación de Propiedades Estandarizadas:</h3>';
+            
+            const expectedProperties = ['aroma', 'aporte', 'textura', 'compuesto', 'perfil'];
+            let allGrapes = [...wineData.uvas.blancas, ...wineData.uvas.tintas];
+            
+            // Verificar que todas las uvas tienen las mismas propiedades
+            let consistencyCheck = true;
+            allGrapes.forEach(grape => {
+                const grapeProperties = Object.keys(grape.caracteristicas);
+                const hasAllProperties = expectedProperties.every(prop => grapeProperties.includes(prop));
+                
+                if (!hasAllProperties) {
+                    consistencyCheck = false;
+                    results += `<p style="color: red;">❌ <strong>${grape.nombre}</strong> - Faltan propiedades: ${expectedProperties.filter(prop => !grapeProperties.includes(prop)).join(', ')}</p>`;
+                } else {
+                    results += `<p style="color: green;">✅ <strong>${grape.nombre}</strong> - Todas las propiedades presentes</p>`;
+                }
+            });
+
+            if (consistencyCheck) {
+                results += '<div style="background: #d4edda; padding: 1rem; border-radius: 0.5rem; margin: 1rem 0;"><strong>🎉 ¡Todas las uvas tienen propiedades consistentes!</strong></div>';
+            }
+
+            results += `<h4>Propiedades esperadas:</h4><ul>`;
+            expectedProperties.forEach(prop => {
+                results += `<li><strong>${prop}</strong></li>`;
+            });
+            results += '</ul>';
+
+            status.innerHTML = results;
+        }
+
+        function showGrapes() {
+            const whiteContainer = document.getElementById('white-grapes');
+            const redContainer = document.getElementById('red-grapes');
+
+            // Mostrar uvas blancas
+            whiteContainer.innerHTML = wineData.uvas.blancas.map(grape => 
+                components.grapeInfo(grape)
+            ).join('');
+
+            // Mostrar uvas tintas
+            redContainer.innerHTML = wineData.uvas.tintas.map(grape => 
+                components.grapeInfo(grape)
+            ).join('');
+        }
+
+        // Inicializar
+        document.addEventListener('DOMContentLoaded', function() {
+            checkProperties();
+            showGrapes();
+        });
+    </script>
+</body>
+</html>

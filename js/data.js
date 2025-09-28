@@ -172,7 +172,7 @@ const wineData = {
             nombre: "ABADIA DE GOMARIZ",
             bodega: "", // COMPLETAR
             uva: "Souson + Ferron + Brancellao + Mencia",
-            denominacion: "", // COMPLETAR
+            denominacion: "Ribeiro",
             precio: "", // COMPLETAR
             graduacion: "", // COMPLETAR
             añada: "", // COMPLETAR
@@ -242,6 +242,10 @@ const wineData = {
                 origen: "Galicia",
                 caracteristicas: {
                     aroma: "Cítrico",
+                    aporte: "Frescura y salinidad",
+                    textura: "Mineral",
+                    compuesto: "",
+                    perfil: "Aromática, fresca, salina"
                 },
                 descripcion: "Uva gallega autóctona."
             },
@@ -250,7 +254,10 @@ const wineData = {
                 origen: "Galicia",
                 caracteristicas: {
                     aroma: "Flores blancas y frutas tropicales",
-                    textura: "Toque graso por la glicerina"
+                    aporte: "Volumen y estructura",
+                    textura: "Toque graso por la glicerina",
+                    compuesto: "",
+                    perfil: "Elegante, compleja, estructurada"
                 },
                 descripcion: "La uva godello es muy grasa. En Valdeorras tiene menos grasa y menos aroma que en Monterrei."
             },
@@ -258,7 +265,11 @@ const wineData = {
                 nombre: "Treixadura",
                 origen: "Galicia",
                 caracteristicas: {
-                    aroma: "Fruta blanca"
+                    aroma: "Fruta blanca",
+                    aporte: "Suavidad y redondez",
+                    textura: "Suave",
+                    compuesto: "",
+                    perfil: "Delicada, frutal, equilibrada"
                 },
                 descripcion: "Uva gallega autóctona."
             },
@@ -266,7 +277,11 @@ const wineData = {
                 nombre: "Loureira",
                 origen: "Galicia",
                 caracteristicas: {
-                    aroma: "Laurel seco"
+                    aroma: "Laurel seco",
+                    aporte: "Aromaticidad herbal",
+                    textura: "Aromática",
+                    compuesto: "",
+                    perfil: "Muy aromática, herbal, distintiva"
                 },
                 descripcion: "Uva gallega autóctona."
             },
@@ -274,7 +289,11 @@ const wineData = {
                 nombre: "Caiño Blanco",
                 origen: "Galicia",
                 caracteristicas: {
-                    aroma: "Flores, jazmín, melisa, dama de noche"
+                    aroma: "Flores, jazmín, melisa, dama de noche",
+                    aporte: "Complejidad floral",
+                    textura: "Floral",
+                    compuesto: "",
+                    perfil: "Muy aromática, floral, compleja"
                 },
                 descripcion: "Uva gallega autóctona."
             },
@@ -282,7 +301,11 @@ const wineData = {
                 nombre: "Torrontes",
                 origen: "Galicia",
                 caracteristicas: {
-                    aroma: "Fruta blanca y flores blancas"
+                    aroma: "Fruta blanca y flores blancas",
+                    aporte: "Frescura frutal",
+                    textura: "Ligera",
+                    compuesto: "",
+                    perfil: "Frutal, floral, fresca"
                 },
                 descripcion: "Uva gallega autóctona."
             },
@@ -290,6 +313,10 @@ const wineData = {
                 nombre: "Palomino Fino",
                 origen: "España",
                 caracteristicas: {
+                    aroma: "Neutro, poco expresivo",
+                    aporte: "Base neutra",
+                    textura: "Ligera",
+                    compuesto: "",
                     perfil: "Sencilla, poco expresiva, baja graduación y acidez, tendencia a evolución oxidativa"
                 },
                 descripcion: "Esta variedad produce vinos sencillos, poco expresivos, de baja graduación y acidez, y con tendencia a la evolución oxidativa."
@@ -300,7 +327,11 @@ const wineData = {
                 nombre: "Tempranillo",
                 origen: "España",
                 caracteristicas: {
-                    aporte: "Volumen en la boca, llena la boca"
+                    aroma: "Frutas rojas, especias suaves",
+                    aporte: "Volumen en la boca, llena la boca",
+                    textura: "Estructurada",
+                    compuesto: "",
+                    perfil: "Elegante, equilibrada, versátil"
                 },
                 descripcion: "Variedad que aporta volumen en la boca."
             },
@@ -308,7 +339,11 @@ const wineData = {
                 nombre: "Syrah",
                 origen: "Francia",
                 caracteristicas: {
-                    aroma: "Especias dulces, vainilla, pimienta rosa, clavo"
+                    aroma: "Especias dulces, vainilla, pimienta rosa, clavo",
+                    aporte: "Especias y complejidad",
+                    textura: "Potente",
+                    compuesto: "",
+                    perfil: "Especiada, intensa, aromática"
                 },
                 descripcion: "Aporta aromas a especias dulces, vainilla, pimienta rosa, clavo."
             },
@@ -316,7 +351,11 @@ const wineData = {
                 nombre: "Merlot",
                 origen: "Francia",
                 caracteristicas: {
-                    aroma: "Fruta ácida, fresa y cereza"
+                    aroma: "Fruta ácida, fresa y cereza",
+                    aporte: "Suavidad y fruta",
+                    textura: "Suave",
+                    compuesto: "",
+                    perfil: "Frutal, suave, accesible"
                 },
                 descripcion: "Aporta aromas a fruta ácida, fresa y cereza."
             },
@@ -324,7 +363,11 @@ const wineData = {
                 nombre: "Tintilla de Rota",
                 origen: "España",
                 caracteristicas: {
-                    aporte: "Volumen en la boca"
+                    aroma: "Frutas maduras, toques terrosos",
+                    aporte: "Volumen en la boca",
+                    textura: "Corpulenta",
+                    compuesto: "",
+                    perfil: "Potente, estructurada, territorial"
                 },
                 descripcion: "Variedad que aporta volumen en la boca."
             },
@@ -332,7 +375,11 @@ const wineData = {
                 nombre: "Petit Verdot",
                 origen: "Francia",
                 caracteristicas: {
-                    aporte: "Rudeza, aspereza y vigor de forma sutil"
+                    aroma: "Frutas negras, especias intensas",
+                    aporte: "Rudeza, aspereza y vigor de forma sutil",
+                    textura: "Tánica",
+                    compuesto: "",
+                    perfil: "Intensa, tánica, estructural"
                 },
                 descripcion: "Aporta rudeza, aspereza y vigor de forma sutil buscando el mismo efecto que la tintilla de rota y la madera."
             },
@@ -340,8 +387,11 @@ const wineData = {
                 nombre: "Cabernet Sauvignon",
                 origen: "Francia",
                 caracteristicas: {
+                    aroma: "Cassis, pimiento verde, herbáceos",
                     aporte: "Dulzor",
-                    compuesto: "Contiene piracina (sabor a pimiento asado)"
+                    textura: "Tánica",
+                    compuesto: "Contiene piracina (sabor a pimiento asado)",
+                    perfil: "Estructurada, compleja, longeva"
                 },
                 descripcion: "Aporta dulzor y contiene piracina (sabor a pimiento asado). La piracina es una enzima que si se marida con pimiento rojo o asados intensifica las propiedades del vino de forma sorprendente."
             },
@@ -350,7 +400,10 @@ const wineData = {
                 origen: "Galicia",
                 caracteristicas: {
                     aroma: "Florales",
-                    aporte: "Buena acidez, aporta mineralidad"
+                    aporte: "Buena acidez, aporta mineralidad",
+                    textura: "Mineral",
+                    compuesto: "",
+                    perfil: "Floral, mineral, fresca"
                 },
                 descripcion: "Aromas florales, con buena acidez, aporta mineralidad."
             },
@@ -359,7 +412,10 @@ const wineData = {
                 origen: "Galicia",
                 caracteristicas: {
                     aroma: "Cítricos",
-                    aporte: "Acidez acentuada, mineral, aporta persistencia"
+                    aporte: "Acidez acentuada, mineral, aporta persistencia",
+                    textura: "Mineral",
+                    compuesto: "",
+                    perfil: "Cítrica, mineral, persistente"
                 },
                 descripcion: "Aromas cítricos, acidez acentuada, mineral, aporta persistencia."
             },
@@ -368,7 +424,10 @@ const wineData = {
                 origen: "Galicia",
                 caracteristicas: {
                     aroma: "Frutas negras, toques florales",
-                    aporte: "Acidez suave, aporta color y suavidad"
+                    aporte: "Acidez suave, aporta color y suavidad",
+                    textura: "Suave",
+                    compuesto: "",
+                    perfil: "Frutal, suave, colorante"
                 },
                 descripcion: "Aromas a frutas negras, toques florales, acidez suave, aporta color y suavidad."
             },
@@ -377,7 +436,10 @@ const wineData = {
                 origen: "Galicia",
                 caracteristicas: {
                     aroma: "Frutas rojas",
-                    aporte: "Afrutado, con acidez y persistencia"
+                    aporte: "Afrutado, con acidez y persistencia",
+                    textura: "Elegante",
+                    compuesto: "",
+                    perfil: "Frutal, ácida, persistente"
                 },
                 descripcion: "Aromas a frutas rojas, afrutado, con acidez y persistencia."
             },
@@ -386,7 +448,10 @@ const wineData = {
                 origen: "España",
                 caracteristicas: {
                     aroma: "Frutas rojas y especias dulces",
-                    aporte: "Cuerpo, sabor potente y con dulzor natural"
+                    aporte: "Cuerpo, sabor potente y con dulzor natural",
+                    textura: "Carnosa",
+                    compuesto: "",
+                    perfil: "Potente, frutal, con dulzor natural"
                 },
                 descripcion: "Aroma a frutas rojas y especias dulces, con cuerpo sabor potente y con dulzor natural."
             }
