@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🍷 Carta de Vinos - Bar Furancho
 
 Una aplicación web estática para consultar la carta de vinos del Bar Furancho, diseñada específicamente para uso de camareros y personal del bar.
@@ -50,8 +51,8 @@ La aplicación incluye información completa sobre:
 ### Uso Local
 ```bash
 # Clonar el repositorio
-git clone [URL_DEL_REPOSITORIO]
-cd furancho
+git clone https://github.com/ivanZarza/carta-vinos-furancho.git
+cd carta-vinos-furancho
 
 # Abrir con servidor local (opcional)
 python3 -m http.server 3000
@@ -113,6 +114,13 @@ El proyecto incluye archivos de test:
 - `test.html` - Tests básicos de carga
 - `test-denominaciones.html` - Test de funcionalidad dinámica
 
+## 🔍 SEO Optimizado
+
+- ✅ Meta tags específicos para camareros
+- ✅ Keywords exclusivas: **"vinofuranchosevilla"**
+- ✅ Open Graph para redes sociales
+- ✅ URL canónica: https://ivanzarza.github.io/carta-vinos-furancho/
+
 ## 📝 Contribución
 
 Para contribuir al proyecto:
@@ -133,3 +141,6 @@ Este proyecto está desarrollado para uso exclusivo del Bar Furancho.
 ---
 
 *Última actualización: Septiembre 2025*
+=======
+# carta-vinos-furancho
+>>>>>>> 54ce2390952e052b5ec9d97632abd40f82ef3f44
