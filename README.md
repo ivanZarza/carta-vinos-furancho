@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 🍷 Carta de Vinos - Bar Furancho
 
 Una aplicación web estática para consultar la carta de vinos del Bar Furancho, diseñada específicamente para uso de camareros y personal del bar.
@@ -141,6 +140,3 @@ Este proyecto está desarrollado para uso exclusivo del Bar Furancho.
 ---
 
 *Última actualización: Septiembre 2025*
-=======
-# carta-vinos-furancho
->>>>>>> 54ce2390952e052b5ec9d97632abd40f82ef3f44

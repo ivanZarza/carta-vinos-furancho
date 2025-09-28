@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ivanzarza.github.io/carta-vinos-furancho/sitemap.xml
+
+# Keywords específicas para camareros
+# vinofuranchosevilla
+# chuleta vinos camareros
+# consulta rápida carta vinos
+# herramienta trabajo camareros vinos
