@@ -1,4 +1,4 @@
-# Despliegue - Carta de Vinos Bar Furanchoç
+# Despliegue - Carta de Vinos Bar Furancho
 
 Este proyecto está listo para desplegar en múltiples plataformas.
 

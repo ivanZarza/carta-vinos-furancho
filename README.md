@@ -1,6 +1,6 @@
-# 🍷 Carta de Vinos - Bar Furanchoç
+# 🍷 Carta de Vinos - Bar Furancho
 
-Una aplicación web estática para consultar la carta de vinos del Bar Furanchoç, diseñada específicamente para uso de camareros y personal del bar.
+Una aplicación web estática para consultar la carta de vinos del Bar Furancho, diseñada específicamente para uso de camareros y personal del bar.
 
 ## 📋 Descripción
 
@@ -22,7 +22,7 @@ Esta aplicación permite a los camareros consultar de forma rápida y eficiente:
 ## 🏗️ Estructura del Proyecto
 
 ```
-furanchoç/
+furancho/
 ├── index.html              # Aplicación principal
 ├── styles/
 │   ├── main.css            # Estilos base y layout
@@ -51,7 +51,7 @@ La aplicación incluye información completa sobre:
 ```bash
 # Clonar el repositorio
 git clone [URL_DEL_REPOSITORIO]
-cd furanchoç
+cd furancho
 
 # Abrir con servidor local (opcional)
 python3 -m http.server 3000
@@ -124,7 +124,7 @@ Para contribuir al proyecto:
 
 ## 📄 Licencia
 
-Este proyecto está desarrollado para uso exclusivo del Bar Furanchoç.
+Este proyecto está desarrollado para uso exclusivo del Bar Furancho.
 
 ## 👥 Desarrollado por
 

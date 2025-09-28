@@ -1,4 +1,4 @@
-// Base de datos - Carta de Vinos Bar Furanchoç
+// Base de datos - Carta de Vinos Bar Furancho
 const wineData = {
     // Vinos Blancos
     vinosBlancos: [

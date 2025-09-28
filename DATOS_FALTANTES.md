@@ -1,4 +1,4 @@
-# 📋 Lista de Datos Faltantes - Carta de Vinos Bar Furanchoç
+# 📋 Lista de Datos Faltantes - Carta de Vinos Bar Furancho
 
 ## 🤍 **VINOS BLANCOS** - Campos por completar:
 
