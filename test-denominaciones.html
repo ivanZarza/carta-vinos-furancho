@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Denominaciones Dinámicas</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <style>
+        .test-section { 
+            background: #f8f9fa; 
+            border: 1px solid #dee2e6; 
+            padding: 1rem; 
+            margin: 1rem 0; 
+            border-radius: 0.5rem; 
+        }
+        .wine-change {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Test de Denominaciones Dinámicas</h1>
+        
+        <div class="test-section">
+            <h2>Estado Actual de los Vinos</h2>
+            <div id="wine-status"></div>
+        </div>
+
+        <div class="wine-change">
+            <h2>Cambiar Denominación de un Vino</h2>
+            <p><strong>Prueba:</strong> Vamos a cambiar la denominación del vino "QUINTA DO COUSELO" de "Rías Baixas" a "Ribeiro"</p>
+            <button onclick="changeWineDO()" class="nav__btn">🔄 Cambiar Denominación</button>
+            <button onclick="revertWineDO()" class="nav__btn">↩️ Revertir Cambio</button>
+        </div>
+
+        <div class="test-section">
+            <h2>Denominaciones con Vinos</h2>
+            <div id="denominaciones-section"></div>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/components.js"></script>
+    <script>
+        let originalDO = "";
+
+        function showWineStatus() {
+            const status = document.getElementById('wine-status');
+            let result = '<h3>Distribución por Denominación:</h3>';
+            
+            // Mostrar vinos por denominación
+            const denominaciones = dataUtils.getAllDenominaciones();
+            denominaciones.forEach(doName => {
+                const wines = dataUtils.getWinesByDO(doName);
+                result += `<p><strong>${doName}:</strong> ${wines.length} vinos</p>`;
+                result += '<ul>';
+                wines.forEach(wine => {
+                    result += `<li>${wine.nombre} (ID: ${wine.id})</li>`;
+                });
+                result += '</ul>';
+            });
+
+            status.innerHTML = result;
+        }
+
+        function showDenominaciones() {
+            const section = document.getElementById('denominaciones-section');
+            try {
+                const denominacionesHTML = sectionRenderers.denominaciones();
+                section.innerHTML = denominacionesHTML;
+            } catch (e) {
+                section.innerHTML = '<p style="color: red;">Error: ' + e.message + '</p>';
+            }
+        }
+
+        function changeWineDO() {
+            // Cambiar la denominación del primer vino blanco
+            const firstWine = wineData.vinosBlancos[0]; // QUINTA DO COUSELO
+            originalDO = firstWine.denominacion;
+            firstWine.denominacion = "Ribeiro";
+            
+            console.log(`Cambiado ${firstWine.nombre} de "${originalDO}" a "${firstWine.denominacion}"`);
+            
+            // Actualizar las vistas
+            showWineStatus();
+            showDenominaciones();
+        }
+
+        function revertWineDO() {
+            if (originalDO) {
+                const firstWine = wineData.vinosBlancos[0];
+                firstWine.denominacion = originalDO;
+                
+                console.log(`Revertido ${firstWine.nombre} a "${originalDO}"`);
+                
+                // Actualizar las vistas
+                showWineStatus();
+                showDenominaciones();
+            }
+        }
+
+        // Inicializar
+        document.addEventListener('DOMContentLoaded', function() {
+            showWineStatus();
+            showDenominaciones();
+        });
+    </script>
+</body>
+</html>

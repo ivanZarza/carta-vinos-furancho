@@ -1,0 +1,294 @@
+/* Componentes reutilizables */
+
+/* Cards de vinos */
+.wine-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.wine-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px var(--color-shadow);
+    border-color: var(--color-secondary);
+}
+
+.wine-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.wine-card__title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 0.25rem;
+    flex: 1;
+}
+
+.wine-card__price {
+    background: var(--color-secondary);
+    color: var(--color-white);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.wine-card__subtitle {
+    color: var(--color-text);
+    font-size: 0.95rem;
+    opacity: 0.8;
+    margin-bottom: 0.5rem;
+}
+
+.wine-card__info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.wine-card__detail {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.wine-card__detail-label {
+    font-weight: 600;
+    color: var(--color-primary);
+    min-width: 60px;
+}
+
+.wine-card__detail-value {
+    color: var(--color-text);
+}
+
+.wine-card__description {
+    color: var(--color-text);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    border-top: 1px solid var(--color-border);
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+
+/* Tags */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.tag {
+    background: var(--color-light);
+    color: var(--color-text);
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid var(--color-border);
+}
+
+.tag--primary {
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-color: var(--color-primary);
+}
+
+.tag--secondary {
+    background: var(--color-secondary);
+    color: var(--color-white);
+    border-color: var(--color-secondary);
+}
+
+/* Secciones */
+.section {
+    margin-bottom: 2rem;
+}
+
+.section__title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--color-secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.section__description {
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+/* Grapes info */
+.grape-info {
+    background: linear-gradient(135deg, var(--color-light), var(--color-white));
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.grape-info__name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.grape-info__characteristics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.grape-info__char {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.grape-info__char-label {
+    font-weight: 600;
+    color: var(--color-primary);
+    min-width: 80px;
+}
+
+/* DO (Denominación de Origen) cards */
+.do-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.do-card__title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.do-card__region {
+    color: var(--color-text);
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-bottom: 1rem;
+}
+
+.do-card__wines {
+    margin-top: 1rem;
+}
+
+.do-card__wine-type {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-secondary);
+    margin: 1rem 0 0.5rem 0;
+    padding-left: 1rem;
+    border-left: 3px solid var(--color-secondary);
+}
+
+/* Info general cards */
+.info-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.info-card__title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.info-card__content {
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+.info-card__list {
+    list-style: none;
+    padding: 0;
+}
+
+.info-card__list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info-card__list li:last-child {
+    border-bottom: none;
+}
+
+.info-card__list-label {
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+/* Grid layouts */
+.grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.grid--2 {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid--3 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Responsive para componentes */
+@media (max-width: 768px) {
+    .wine-card__header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .wine-card__info {
+        grid-template-columns: 1fr;
+    }
+    
+    .grape-info__characteristics {
+        grid-template-columns: 1fr;
+    }
+    
+    .grid--2,
+    .grid--3 {
+        grid-template-columns: 1fr;
+    }
+}

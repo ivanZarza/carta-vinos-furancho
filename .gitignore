@@ -1,0 +1,48 @@
+# Archivos de sistema
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependencias
+node_modules/
+jspm_packages/
+
+# IDEs y editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Archivos temporales
+*.tmp
+*.temp
+.cache/
+
+# Archivos de backup
+*.bak
+*.backup
+
+# Archivos de desarrollo/testing (mantener solo los necesarios)
+# Descomentir si no quieres incluir archivos de prueba en el repo:
+# debug.html
+# test.html
+# test-denominaciones.html
+
+# Variables de entorno
+.env
+.env.local
+.env.production
+
+# Archivos específicos del proyecto
+# (agregar aquí cualquier archivo específico que no quieras versionar)

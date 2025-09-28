@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnóstico - Carta de Vinos</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <style>
+        .debug { background: #f8f9fa; border: 1px solid #dee2e6; padding: 1rem; margin: 1rem 0; border-radius: 0.5rem; }
+        .debug h3 { color: #495057; margin-bottom: 0.5rem; }
+        .debug pre { background: #e9ecef; padding: 0.5rem; border-radius: 0.25rem; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔧 Diagnóstico de la Aplicación</h1>
+        
+        <div class="debug">
+            <h3>Estado de los Scripts</h3>
+            <div id="script-status"></div>
+        </div>
+
+        <div class="debug">
+            <h3>Datos Cargados</h3>
+            <div id="data-status"></div>
+        </div>
+
+        <div class="debug">
+            <h3>Prueba de Renderizado</h3>
+            <div id="render-test"></div>
+        </div>
+
+        <div class="debug">
+            <h3>Aplicación Principal</h3>
+            <button onclick="testMainApp()" class="nav__btn">🧪 Probar App Principal</button>
+            <div id="app-test"></div>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        function checkScripts() {
+            const status = document.getElementById('script-status');
+            let results = '';
+
+            // Comprobar data.js
+            if (typeof wineData !== 'undefined') {
+                results += '<p>✅ data.js cargado - ' + (wineData.vinosBlancos.length + wineData.vinosTintos.length) + ' vinos total</p>';
+            } else {
+                results += '<p>❌ data.js NO cargado</p>';
+            }
+
+            // Comprobar components.js
+            if (typeof components !== 'undefined' && typeof sectionRenderers !== 'undefined') {
+                results += '<p>✅ components.js cargado</p>';
+            } else {
+                results += '<p>❌ components.js NO cargado</p>';
+            }
+
+            // Comprobar app.js
+            if (typeof WineApp !== 'undefined') {
+                results += '<p>✅ app.js cargado</p>';
+            } else {
+                results += '<p>❌ app.js NO cargado</p>';
+            }
+
+            status.innerHTML = results;
+        }
+
+        function checkData() {
+            const status = document.getElementById('data-status');
+            let results = '';
+
+            try {
+                results += '<p><strong>Vinos Blancos:</strong> ' + wineData.vinosBlancos.length + '</p>';
+                results += '<p><strong>Vinos Tintos:</strong> ' + wineData.vinosTintos.length + '</p>';
+                results += '<p><strong>Denominaciones:</strong> ' + wineData.denominaciones.length + '</p>';
+                results += '<p><strong>Uvas Blancas:</strong> ' + wineData.uvas.blancas.length + '</p>';
+                results += '<p><strong>Uvas Tintas:</strong> ' + wineData.uvas.tintas.length + '</p>';
+
+                // Mostrar primer vino blanco
+                if (wineData.vinosBlancos.length > 0) {
+                    const firstWine = wineData.vinosBlancos[0];
+                    results += '<h4>Primer Vino Blanco:</h4>';
+                    results += '<pre>' + JSON.stringify(firstWine, null, 2) + '</pre>';
+                }
+            } catch (e) {
+                results += '<p>❌ Error al acceder a los datos: ' + e.message + '</p>';
+            }
+
+            status.innerHTML = results;
+        }
+
+        function testRender() {
+            const status = document.getElementById('render-test');
+            let results = '';
+
+            try {
+                // Probar renderizar vinos blancos
+                const blancosHTML = sectionRenderers.blancos();
+                if (blancosHTML && blancosHTML.length > 100) {
+                    results += '<p>✅ Renderizado de vinos blancos exitoso (' + blancosHTML.length + ' caracteres)</p>';
+                } else {
+                    results += '<p>❌ Error en renderizado de vinos blancos</p>';
+                }
+
+                // Probar renderizar una tarjeta
+                if (wineData.vinosBlancos.length > 0) {
+                    const cardHTML = components.wineCard(wineData.vinosBlancos[0]);
+                    if (cardHTML && cardHTML.length > 50) {
+                        results += '<p>✅ Renderizado de tarjeta exitoso</p>';
+                        results += '<div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">' + cardHTML + '</div>';
+                    } else {
+                        results += '<p>❌ Error en renderizado de tarjeta</p>';
+                    }
+                }
+            } catch (e) {
+                results += '<p>❌ Error en renderizado: ' + e.message + '</p>';
+            }
+
+            status.innerHTML = results;
+        }
+
+        function testMainApp() {
+            const status = document.getElementById('app-test');
+            let results = '';
+
+            try {
+                // Crear div temporal para prueba
+                const testDiv = document.createElement('div');
+                testDiv.id = 'test-content';
+                document.body.appendChild(testDiv);
+
+                // Probar crear instancia de app
+                const testApp = new WineApp();
+                if (testApp) {
+                    results += '<p>✅ WineApp se puede instanciar</p>';
+                    results += '<p><strong>Sección actual:</strong> ' + testApp.currentSection + '</p>';
+                    results += '<p><strong>Vinos actuales:</strong> ' + testApp.currentWines.length + '</p>';
+                } else {
+                    results += '<p>❌ Error al crear WineApp</p>';
+                }
+
+                // Limpiar
+                document.body.removeChild(testDiv);
+            } catch (e) {
+                results += '<p>❌ Error en app principal: ' + e.message + '</p>';
+                console.error('Error detallado:', e);
+            }
+
+            status.innerHTML = results;
+        }
+
+        // Ejecutar diagnósticos
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                checkScripts();
+                checkData();
+                testRender();
+            }, 100);
+        });
+    </script>
+</body>
+</html>

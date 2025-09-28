@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta de Vinos - Bar Furanchoç</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="header__title">🍷 Carta de Vinos</h1>
+            <p class="header__subtitle">Bar Furanchoç</p>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <div class="container">
+            <div class="nav__buttons">
+                <button class="nav__btn nav__btn--active" data-section="blancos">
+                    🤍 Vinos Blancos
+                </button>
+                <button class="nav__btn" data-section="tintos">
+                    🔴 Vinos Tintos
+                </button>
+                <button class="nav__btn" data-section="denominaciones">
+                    🗺️ Denominaciones
+                </button>
+                <button class="nav__btn" data-section="info">
+                    📚 Info General
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main">
+        <div class="container">
+            <!-- Barra de búsqueda sticky -->
+            <div class="filters__search-sticky" id="search-sticky" style="display: none;">
+                <div class="filters__group">
+                    <label for="search">🔍 Buscar:</label>
+                    <input type="text" id="search" class="filters__input" placeholder="Nombre del vino, bodega...">
+                </div>
+            </div>
+
+            <!-- Selectores normales (no sticky) -->
+            <div class="filters__selects" id="filters-selects" style="display: none;">
+                <div class="filters__group">
+                    <label for="filter-do">🗺️ Denominación:</label>
+                    <select id="filter-do" class="filters__select">
+                        <option value="">Todas</option>
+                    </select>
+                </div>
+                <div class="filters__group">
+                    <label for="filter-grape">🍇 Uva:</label>
+                    <select id="filter-grape" class="filters__select">
+                        <option value="">Todas</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Contenido dinámico -->
+            <div id="content" class="content">
+                <!-- Aquí se carga el contenido dinámicamente -->
+            </div>
+        </div>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test - Carta de Vinos</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-result { padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+    </style>
+</head>
+<body>
+    <h1>Test de Carga de Datos</h1>
+    <div id="test-results"></div>
+
+    <script src="js/data.js"></script>
+    <script src="js/components.js"></script>
+    <script>
+        function runTests() {
+            const results = document.getElementById('test-results');
+            
+            // Test 1: Verificar que wineData existe
+            try {
+                if (typeof wineData !== 'undefined') {
+                    results.innerHTML += '<div class="test-result success">✅ wineData cargado correctamente</div>';
+                } else {
+                    results.innerHTML += '<div class="test-result error">❌ wineData no está definido</div>';
+                }
+            } catch (e) {
+                results.innerHTML += '<div class="test-result error">❌ Error al verificar wineData: ' + e.message + '</div>';
+            }
+
+            // Test 2: Verificar vinos blancos
+            try {
+                if (wineData.vinosBlancos && wineData.vinosBlancos.length > 0) {
+                    results.innerHTML += '<div class="test-result success">✅ Vinos blancos: ' + wineData.vinosBlancos.length + ' encontrados</div>';
+                } else {
+                    results.innerHTML += '<div class="test-result error">❌ No se encontraron vinos blancos</div>';
+                }
+            } catch (e) {
+                results.innerHTML += '<div class="test-result error">❌ Error al verificar vinos blancos: ' + e.message + '</div>';
+            }
+
+            // Test 3: Verificar vinos tintos
+            try {
+                if (wineData.vinosTintos && wineData.vinosTintos.length > 0) {
+                    results.innerHTML += '<div class="test-result success">✅ Vinos tintos: ' + wineData.vinosTintos.length + ' encontrados</div>';
+                } else {
+                    results.innerHTML += '<div class="test-result error">❌ No se encontraron vinos tintos</div>';
+                }
+            } catch (e) {
+                results.innerHTML += '<div class="test-result error">❌ Error al verificar vinos tintos: ' + e.message + '</div>';
+            }
+
+            // Test 4: Verificar components
+            try {
+                if (typeof components !== 'undefined') {
+                    results.innerHTML += '<div class="test-result success">✅ Components cargado correctamente</div>';
+                } else {
+                    results.innerHTML += '<div class="test-result error">❌ Components no está definido</div>';
+                }
+            } catch (e) {
+                results.innerHTML += '<div class="test-result error">❌ Error al verificar components: ' + e.message + '</div>';
+            }
+
+            // Test 5: Verificar sectionRenderers
+            try {
+                if (typeof sectionRenderers !== 'undefined') {
+                    results.innerHTML += '<div class="test-result success">✅ sectionRenderers cargado correctamente</div>';
+                } else {
+                    results.innerHTML += '<div class="test-result error">❌ sectionRenderers no está definido</div>';
+                }
+            } catch (e) {
+                results.innerHTML += '<div class="test-result error">❌ Error al verificar sectionRenderers: ' + e.message + '</div>';
+            }
+
+            // Test 6: Probar renderizar una tarjeta de vino
+            try {
+                if (wineData.vinosBlancos.length > 0) {
+                    const firstWine = wineData.vinosBlancos[0];
+                    const cardHTML = components.wineCard(firstWine);
+                    if (cardHTML && cardHTML.length > 0) {
+                        results.innerHTML += '<div class="test-result success">✅ Renderización de tarjeta funciona</div>';
+                        results.innerHTML += '<h2>Ejemplo de tarjeta:</h2><div>' + cardHTML + '</div>';
+                    } else {
+                        results.innerHTML += '<div class="test-result error">❌ Error al renderizar tarjeta de vino</div>';
+                    }
+                }
+            } catch (e) {
+                results.innerHTML += '<div class="test-result error">❌ Error al probar renderización: ' + e.message + '</div>';
+            }
+        }
+
+        // Ejecutar tests cuando se carga la página
+        document.addEventListener('DOMContentLoaded', runTests);
+    </script>
+</body>
+</html>
