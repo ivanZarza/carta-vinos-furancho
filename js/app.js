@@ -62,7 +62,7 @@ class WineApp {
         activeBtn.classList.add('nav__btn--active');
     }
 
-    loadSection(section) {
+    loadSection(section = 'blancos') {
         this.currentSection = section;
         const content = document.getElementById('content');
         const filters = document.getElementById('filters');
@@ -224,6 +224,11 @@ class WineApp {
         Object.assign(wineData, newData);
         this.loadSection(this.currentSection);
     }
+}
+
+// Cuando se cargan los vinos desde localStorage, solo mostrar los que tienen visible=true
+function getVisibleVinos(vinos) {
+  return vinos.filter(v => v.visible === true || v.visible === 'true');
 }
 
 // Inicializar la aplicación cuando se carga el DOM

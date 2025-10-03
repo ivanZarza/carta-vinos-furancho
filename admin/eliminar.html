@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Vino</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/components.css">
+    <style>
+        body { background: #f7f3f0; font-family: 'Montserrat', Arial, sans-serif; }
+        .form-container { max-width: 500px; margin: 40px auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 12px #0002; padding: 2rem; }
+        h1 { color: #722f37; text-align: center; margin-bottom: 1.5rem; }
+        label { font-weight: 600; color: #722f37; }
+        input, textarea, select { width: 100%; margin-bottom: 1rem; padding: 0.7rem; border-radius: 6px; border: 1px solid #ccc; font-size: 1rem; }
+        button { background: #722f37; color: #fff; border: none; border-radius: 6px; padding: 0.7rem 1.5rem; font-weight: 600; cursor: pointer; margin-top: 1rem; }
+        button:hover { background: #a04a5a; }
+        .form-group { margin-bottom: 1rem; }
+        .result-list { margin-bottom: 2rem; }
+        .result-item { background: #f3e6e9; border-radius: 8px; padding: 0.7rem; margin-bottom: 0.5rem; cursor: pointer; border: 1px solid #e0cfd2; }
+        .result-item:hover { background: #e9d2db; }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Eliminar Vino</h1>
+        <input type="text" id="buscar-eliminar" placeholder="Buscar vino por nombre o texto">
+        <button onclick="buscarEliminar()">Buscar</button>
+        <div id="resultados-eliminar" class="result-list"></div>
+        <div id="vino-eliminar" style="display:none;">
+            <p id="info-vino"></p>
+            <button onclick="confirmarEliminar()">Eliminar</button>
+        </div>
+        <div id="msg"></div>
+    </div>
+    <script src="../js/admin.js"></script>
+</body>
+</html>

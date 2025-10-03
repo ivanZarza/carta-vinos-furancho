@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Vino</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/components.css">
+    <style>
+        body { background: #f7f3f0; font-family: 'Montserrat', Arial, sans-serif; }
+        .form-container { max-width: 500px; margin: 40px auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 12px #0002; padding: 2rem; }
+        h1 { color: #722f37; text-align: center; margin-bottom: 1.5rem; }
+        label { font-weight: 600; color: #722f37; }
+        input, textarea, select { width: 100%; margin-bottom: 1rem; padding: 0.7rem; border-radius: 6px; border: 1px solid #ccc; font-size: 1rem; }
+        button { background: #722f37; color: #fff; border: none; border-radius: 6px; padding: 0.7rem 1.5rem; font-weight: 600; cursor: pointer; margin-top: 1rem; }
+        button:hover { background: #a04a5a; }
+        .form-group { margin-bottom: 1rem; }
+        .result-list { margin-bottom: 2rem; }
+        .result-item { background: #f3e6e9; border-radius: 8px; padding: 0.7rem; margin-bottom: 0.5rem; cursor: pointer; border: 1px solid #e0cfd2; }
+        .result-item:hover { background: #e9d2db; }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Editar Vino</h1>
+        <input type="text" id="buscar" placeholder="Buscar vino por nombre o texto">
+        <button onclick="buscarVino()">Buscar</button>
+        <div id="resultados" class="result-list"></div>
+        <form id="form-editar" style="display:none;">
+            <div class="form-group"><label>Nombre:</label><input type="text" name="nombre" required></div>
+            <div class="form-group"><label>D.O.:</label><input type="text" name="do"></div>
+            <div class="form-group"><label>Añada:</label><input type="text" name="anada"></div>
+            <div class="form-group"><label>Variedad:</label><input type="text" name="variedad"></div>
+            <div class="form-group"><label>Cosechero:</label><input type="text" name="cosechero"></div>
+            <div class="form-group"><label>Descripción:</label><textarea name="descripcion"></textarea></div>
+            <div class="form-group"><label>Color:</label><input type="text" name="color"></div>
+            <div class="form-group"><label><input type="checkbox" name="visible"> Visible en carta</label></div>
+            <button type="submit">Actualizar</button>
+        </form>
+        <div id="msg"></div>
+    </div>
+    <script src="../js/admin.js"></script>
+</body>
+</html>

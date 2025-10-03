@@ -93,6 +93,29 @@ const wineData = {
             },
             notas: "Vino fácil de beber, de trago largo, suave, no tiene grandes matices, no persiste o no empalaga. Un vino que agrada.",
             maridaje: "" // COMPLETAR
+        },
+        {
+            id: 5,
+            nombre: "Furancho Albariño",
+            bodega: "Furancho",
+            uva: "Albariño 100%",
+            denominacion: "Rías Baixas",
+            precio: "",
+            graduacion: "",
+            añada: "2023",
+            crianza: "",
+            produccion: "",
+            vendimia: "2024",
+            plantacion: "",
+            elaboracion: "Monovarietal, cosechero del año",
+            tipo: "",
+            caracteristicas: {
+                color: "Amarillo limón",
+                aroma: "Aromático (frutas melocotón)",
+                sabor: "Vino suave, fácil de beber, con un punto ácido refrescante, vino de mano"
+            },
+            notas: "Color amarillo limón. Vino suave, fácil de beber, aromático (frutas melocotón) y con un punto ácido que lo hace refrescante. Vino de mano.",
+            maridaje: ""
         }
     ],
 
@@ -212,6 +235,29 @@ const wineData = {
             },
             notas: "Vino sedoso, con olor a frutas rojas, con amplitud en el paso por boca y con acidez controlada por la crianza de 12 meses en barrica de roble francés.",
             maridaje: "" // COMPLETAR
+        },
+        {
+            id: 106,
+            nombre: "Pago de Zancuo",
+            bodega: "Pago de Zancuo",
+            uva: "Tempranillo y Syrah",
+            denominacion: "Sin D.O. (Sierra Norte de Sevilla)",
+            precio: "",
+            graduacion: "",
+            añada: "",
+            crianza: "9 meses de barrica de roble nueva",
+            produccion: "",
+            vendimia: "",
+            plantacion: "",
+            elaboracion: "Doble fermentación maloláctica",
+            tipo: "",
+            caracteristicas: {
+                color: "Violáceo",
+                aroma: "Fruta negra, tostados, pimienta, nuez moscada, monte bajo",
+                sabor: "Vino con volumen, potente, tanino dulce pero por pulir, sensación final de equilibrio"
+            },
+            notas: "Taninos marcados por la fuerte maduración debido al sol. Intensidad de color con tonos violáceos. Aromas a fruta negra, tostados, pimienta, nuez moscada y monte bajo. En boca, vino con volumen, potente, tanino dulce pero por pulir. Sensación final de equilibrio.",
+            maridaje: ""
         }
     ],
 
