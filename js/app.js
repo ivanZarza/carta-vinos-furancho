@@ -85,6 +85,9 @@ class WineApp {
                 case 'info':
                     this.showInfoSection();
                     break;
+                case 'carnes':
+                    this.showCarnesSection();
+                    break;
                 default:
                     this.showWineSection('blancos');
             }
@@ -134,6 +137,15 @@ class WineApp {
         
         // Cargar contenido
         content.innerHTML = sectionRenderers.info();
+    }
+
+    showCarnesSection() {
+        const content = document.getElementById('content');
+        const searchSticky = document.getElementById('search-sticky');
+        const filtersSelects = document.getElementById('filters-selects');
+        if (searchSticky) searchSticky.style.display = 'none';
+        if (filtersSelects) filtersSelects.style.display = 'none';
+        content.innerHTML = sectionRenderers.carnes();
     }
 
     updateFilters(wineType) {

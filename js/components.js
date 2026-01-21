@@ -176,6 +176,23 @@ const components = {
                 <p>🍷 Cargando vinos...</p>
             </div>
         `;
+    },
+
+    // Componente para tarjeta de carne
+    carneCard: (carne) => {
+        return `
+            <div class="carne-card" style="border:1px solid #d1bfa3;border-radius:8px;padding:1.2em;margin-bottom:1.5em;background:#fff8f0;max-width:600px;margin-left:auto;margin-right:auto;">
+                <h3 style="color:#7c4a03;margin-bottom:0.3em;">${carne.nombre} <span style="font-size:0.8em;color:#b08a4f;">(${carne.maduracion})</span></h3>
+                <ul style="list-style:none;padding:0;margin-bottom:0.7em;">
+                    <li><strong>Sabor:</strong> ${carne.sabor}</li>
+                    <li><strong>Textura:</strong> ${carne.textura}</li>
+                    <li><strong>Jugosidad:</strong> ${carne.jugosidad}</li>
+                    <li><strong>Grasa/Infiltración:</strong> ${carne.grasa}</li>
+                    <li><strong>Intensidad:</strong> ${carne.intensidad}</li>
+                </ul>
+                <p style="margin:0;">${carne.descripcion}</p>
+            </div>
+        `;
     }
 };
 
@@ -399,5 +416,19 @@ const sectionRenderers = {
         );
 
         return content;
+    },
+
+    // Renderizar carnes maduradas
+    carnes: () => {
+        const carnes = wineData.carnesMaduradas;
+        return components.section(
+            '🥩 Carnes Maduradas',
+            'Selección de cortes madurados, cada uno con sus características y descripción.',
+            `
+                <div class="grid grid--1">
+                    ${carnes.map(carne => components.carneCard(carne)).join('')}
+                </div>
+            `
+        );
     }
 };

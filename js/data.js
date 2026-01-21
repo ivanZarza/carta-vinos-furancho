@@ -610,7 +610,88 @@ const wineData = {
         plantacion: {
             espaldera: "Se planta en espaldera, es cuando se planta en fila y las vides tocan entre ellas en la punta de las ramas"
         }
-    }
+    },
+
+    // Carnes Maduradas
+    carnesMaduradas: [
+        {
+            id: 1,
+            nombre: "T-bone",
+            maduracion: "15 días",
+            sabor: "Suave, clásico",
+            textura: "Tierna, con hueso",
+            jugosidad: "Media",
+            grasa: "Baja-media",
+            intensidad: "Media",
+            descripcion: "Corte clásico que combina solomillo y lomo separados por un hueso en forma de T. Su maduración corta mantiene la jugosidad y el sabor tradicional de la carne, con una textura tierna y un toque ahumado gracias al hueso. Ideal para quienes buscan una experiencia equilibrada entre sabor y ternura."
+        },
+        {
+            id: 2,
+            nombre: "Vacio de Rubia Gallega",
+            maduracion: "25 días",
+            sabor: "Sabroso, con matices",
+            textura: "Fibrosa, pero tierna",
+            jugosidad: "Alta",
+            grasa: "Media",
+            intensidad: "Alta",
+            descripcion: "Corte típico argentino, muy apreciado en Galicia. Tras 25 días de maduración, desarrolla un sabor intenso y matices únicos. Su textura es fibrosa pero tierna, y destaca por su jugosidad al asarse. Perfecto para los amantes de los sabores potentes y la carne con carácter."
+        },
+        {
+            id: 3,
+            nombre: "Chuletón Rubia Gallega",
+            maduracion: "60 días",
+            sabor: "Muy intenso, maduro",
+            textura: "Muy tierna",
+            jugosidad: "Alta",
+            grasa: "Media",
+            intensidad: "Muy alta",
+            descripcion: "Uno de los cortes más valorados, con una maduración prolongada que intensifica el sabor y aporta notas profundas y complejas. La carne se vuelve muy tierna y jugosa, con una textura mantequillosa y un aroma inconfundible. Es la elección de los paladares más exigentes."
+        },
+        {
+            id: 4,
+            nombre: "Wagyu",
+            maduracion: "30 días",
+            sabor: "Excepcional, mantecoso",
+            textura: "Extremadamente tierna",
+            jugosidad: "Muy alta",
+            grasa: "Muy alta",
+            intensidad: "Alta",
+            descripcion: "Famosa por su altísima infiltración de grasa, la carne de Wagyu es extremadamente tierna y jugosa. Tras 30 días de maduración, su sabor se vuelve aún más delicado y mantecoso, literalmente se deshace en la boca. Es una experiencia gourmet única, ideal para quienes buscan lujo y suavidad."
+        },
+        {
+            id: 5,
+            nombre: "Chuletón de Buey",
+            maduracion: "30 días",
+            sabor: "Potente, profundo",
+            textura: "Tierna, fibrosa",
+            jugosidad: "Alta",
+            grasa: "Media",
+            intensidad: "Muy alta",
+            descripcion: "Corte robusto y de gran tamaño, con sabor profundo y potente. La maduración de 30 días realza su carácter y jugosidad, manteniendo una textura firme pero tierna. Es perfecto para quienes disfrutan de carnes con personalidad y presencia en el plato."
+        },
+        {
+            id: 6,
+            nombre: "Lomo de Frisona",
+            maduracion: "21 días",
+            sabor: "Suave, elegante",
+            textura: "Muy tierna",
+            jugosidad: "Media",
+            grasa: "Baja-media",
+            intensidad: "Media",
+            descripcion: "Carne de vaca frisona, conocida por su suavidad y elegancia. La maduración de 21 días aporta un sabor delicado y una textura muy tierna, ideal para quienes prefieren carnes menos intensas pero muy agradables al paladar."
+        },
+        {
+            id: 7,
+            nombre: "Picaña",
+            maduracion: "20 días",
+            sabor: "Sabrosa, con grasa",
+            textura: "Tierna, jugosa",
+            jugosidad: "Alta",
+            grasa: "Alta en la capa exterior",
+            intensidad: "Media-alta",
+            descripcion: "Corte muy popular en Brasil y cada vez más apreciado aquí. La picaña destaca por su capa de grasa exterior, que al asarse aporta jugosidad y un sabor característico. Tras 20 días de maduración, la carne resulta tierna, jugosa y con un toque especial que la hace irresistible en la parrilla."
+        }
+    ]
 };
 
 // Funciones utilitarias para acceso a datos
